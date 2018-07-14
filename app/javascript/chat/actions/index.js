@@ -5,7 +5,7 @@ export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 export const CHANNEL_SELECTED = 'CHANNEL_SELECTED';
 
 export function fetchMessages(channel) {
-  const url = `${BASE_URL}/${channel}/messages`;
+  const url = `${BASE_URL}/channels/${channel}/messages`;
   const promise = fetch(url, { credentials: "same-origin" }).then(r => r.json());
 
   return {
@@ -15,7 +15,7 @@ export function fetchMessages(channel) {
 }
 
 export function createMessage(channel, author, content) {
-  const url = `${BASE_URL}/${channel}/messages`;
+  const url = `${BASE_URL}/channels/${channel}/messages`;
   const body = { content };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
   const promise = fetch(url, {
@@ -35,9 +35,8 @@ export function createMessage(channel, author, content) {
   };
 }
 
-export function selectChannel(channel) {
+export function selectChannel() {
   return {
-    type: CHANNEL_SELECTED,
-    payload: channel
+    type: CHANNEL_SELECTED
   };
 }
