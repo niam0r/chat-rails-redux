@@ -23,6 +23,7 @@ export function createMessage(channel, author, content) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
+    credentials: "same-origin",
     body: JSON.stringify(body)
   }).then(r => r.json());
 
