@@ -13,7 +13,6 @@ function strToRGB(str) {
 }
 
 const Message = (props) => {
-  // debugger
   const { created_at, author, content } = props.message;
   const time = new Date(created_at).toLocaleTimeString();
   return (
