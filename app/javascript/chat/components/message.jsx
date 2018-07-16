@@ -13,6 +13,7 @@ import { emojify } from 'react-emojione';
 // }
 
 const Message = (props) => {
+  // debugger
   const { created_at, author, content } = props.message;
   const time = new Date(created_at).toLocaleTimeString();
   return (
@@ -21,7 +22,7 @@ const Message = (props) => {
         <span>{author}</span>
         <small>{time}</small>
       </i>
-      <p>{emojify(content)}</p>
+      <p>{content}</p>
     </div>
   );
 };
@@ -30,3 +31,6 @@ export default Message;
 
 // replace line 21 with this one below:
 // <span style={{ color: strToRGB(author) }}>{author}</span>
+
+// replace line 24 with this one below:
+      // <p>{emojify(content)}</p>

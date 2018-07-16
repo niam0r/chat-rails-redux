@@ -6,18 +6,18 @@ class Message < ApplicationRecord
 
   # after_create :broadcast_message
 
-  # def as_json(options = {})
+  def as_json(options = {})
 
-  #   nickname = user.nickname.nil? ? user.email.match(/[^@]+/)[0] : user.nickname
+    author = User.find_by(id: user_id)
 
-  #   {
-  #     id: id,
-  #     author: nickname,
-  #     content: content,
-  #     created_at: created_at,
-  #     channel: channel.name
-  #   }
-  # end
+    {
+      id: id,
+      author: author.email,
+      content: content,
+      created_at: created_at,
+      channel: channel.name
+    }
+  end
 
   private
 
