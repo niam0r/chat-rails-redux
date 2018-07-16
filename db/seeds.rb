@@ -17,11 +17,11 @@ general = Channel.create(name: 'general')
 paris = Channel.create(name: 'paris')
 react = Channel.create(name: 'react')
 
-seb = User.create(email: 'seb@lewagon.com', password: 'motdepasse')
+seb = User.create(email: 'seb@lewagon.com', nickname:'seb', password: 'motdepasse')
 puts seb
-romain = User.create(email: 'romain@lewagon.com', password: 'motdepasse')
+romain = User.create(email: 'romain@lewagon.com', nickname:'romain', password: 'motdepasse')
 puts romain
-boris = User.create(email: 'boris@lewagon.com', password: 'motdepasse')
+boris = User.create(email: 'boris@lewagon.com', nickname:'boris', password: 'motdepasse')
 puts boris
 
 
