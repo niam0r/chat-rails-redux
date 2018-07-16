@@ -8,11 +8,11 @@ class Message < ApplicationRecord
 
   def as_json(options = {})
 
-    author = User.find_by(id: user_id)
+    user = User.find_by(id: user_id)
 
     {
       id: id,
-      author: author.email,
+      author: user.nickname,
       content: content,
       created_at: created_at,
       channel: channel.name
