@@ -26,5 +26,5 @@ puts boris
 
 
 Message.create({user: seb, channel: general, content: "seb is testing the general channel"})
-Message.create({user: romain, channel: general, content: "romain is testing the paris channel"})
-Message.create({user: boris, channel: general, content: "boris is testing the paris channel"})
+Message.create({user: romain, channel: react, content: "romain is testing the react channel"})
+Message.create({user: boris, channel: paris, content: "boris is testing the paris channel"})
