@@ -11,8 +11,14 @@ class MessageList extends Component {
     this.fetchMessages();
   }
 
-  componentDidMount() {
-    // this.refresher = setInterval(this.fetchMessages, 5000);
+  componentDidMount() { // For the first channel
+    this.subscribeActionCable(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.selectedChannel != nextProps.selectedChannel ) {
+      this.subscribeActionCable(nextProps);
+    }
   }
 
   componentDidUpdate() {
