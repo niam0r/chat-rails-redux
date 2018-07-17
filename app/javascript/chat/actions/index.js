@@ -3,7 +3,6 @@ const BASE_URL = '/api/v1';
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 export const CHANNEL_SELECTED = 'CHANNEL_SELECTED';
-export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 
 export function fetchMessages(channel) {
   const url = `${BASE_URL}/channels/${channel}/messages`;
