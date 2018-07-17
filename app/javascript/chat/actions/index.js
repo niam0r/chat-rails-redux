@@ -14,7 +14,7 @@ export function fetchMessages(channel) {
   };
 }
 
-export function createMessage(channel, author, content) {
+export function createMessage(channel, content) {
   const url = `${BASE_URL}/channels/${channel}/messages`;
   const body = { content };
   const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
