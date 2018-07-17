@@ -22,6 +22,6 @@ class Message < ApplicationRecord
   private
 
   def broadcast_message
-    ActionCable.server.broadcast("channel_#{channel.name}", self)
+    ActionCable.server.broadcast("channel_#{channel.name}", self.to_json)
   end
 end

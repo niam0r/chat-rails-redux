@@ -39,6 +39,7 @@ class MessageList extends Component {
       { channel: 'ChannelsChannel', name: props.selectedChannel },
       {
         received: (message) => {
+        // debugger;
           if (message.channel === props.selectedChannel) {
             props.appendMessage(message);
           }
