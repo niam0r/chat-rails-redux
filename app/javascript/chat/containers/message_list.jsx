@@ -27,6 +27,20 @@ class MessageList extends Component {
     this.props.fetchMessages(this.props.selectedChannel);
   }
 
+
+  subscribeActionCable = (props) => {
+    App[`channel_${props.selectedChannel}`] = App.cable.subscriptions.create(
+      { channel: 'ChannelsChannel', name: props.selectedChannel },
+      {
+        received: (message) => {
+          if (message.channel === props.selectedChannel) {
+            props.appendMessage(message);
+          }
+        }
+      }
+    );
+  }
+
   render () {
     return (
       <div className="channel-container">
