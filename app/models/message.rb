@@ -4,7 +4,7 @@ class Message < ApplicationRecord
 
   validates :content, presence: true
 
-  # after_create :broadcast_message
+  after_create :broadcast_message
 
   def as_json(options = {})
 
